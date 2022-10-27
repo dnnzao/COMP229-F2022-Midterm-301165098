@@ -14,12 +14,4 @@ router.get("/", (req, res, next) => {
   });
 });
 
-/* GET home page. wildcard */
-router.get("/add", (req, res, next) => {
-  res.render("books/details", {
-    title: "Details",
-    books: "",
-  });
-});
-
 module.exports = router;
