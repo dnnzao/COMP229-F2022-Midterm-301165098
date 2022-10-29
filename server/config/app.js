@@ -1,3 +1,9 @@
+/**
+ * Author: Denio Barbosa Junior
+ * Date: 29/10/2022
+ *
+ */
+
 // moddules for node and express
 let createError = require("http-errors");
 let express = require("express");

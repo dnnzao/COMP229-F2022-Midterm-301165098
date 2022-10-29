@@ -1,3 +1,9 @@
+/**
+ * Author: Denio Barbosa Junior
+ * Date: 29/10/2022
+ *
+ */
+
 let app = require("./server/config/app");
 let debug = require("debug")("comp308-w2019-midterm:server");
 let http = require("http");

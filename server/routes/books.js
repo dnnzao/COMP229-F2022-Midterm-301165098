@@ -1,3 +1,9 @@
+/**
+ * Author: Denio Barbosa Junior
+ * Date: 29/10/2022
+ *
+ */
+
 // modules required for routing
 let express = require("express");
 let router = express.Router();
@@ -34,7 +40,7 @@ router.get("/add", (req, res, next) => {
 router.post("/add", (req, res, next) => {
   new book(req.body).save((err) => {
     if (err) return next(err);
-    res.redirect('/books');
+    res.redirect("/books");
   });
 });
 
@@ -42,7 +48,7 @@ router.post("/add", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
   book.findById(req.params.id, (err, bookInstance) => {
     if (err) return next(err);
-    res.render('books/details.ejs', {
+    res.render("books/details.ejs", {
       title: `Details: ${bookInstance.Title}`,
       books: bookInstance,
     });
@@ -53,7 +59,7 @@ router.get("/:id", (req, res, next) => {
 router.post("/:id", (req, res, next) => {
   book.findByIdAndUpdate(req.params.id, req.body, (err) => {
     if (err) return next(err);
-    res.redirect('/books');
+    res.redirect("/books");
   });
 });
 
@@ -61,7 +67,7 @@ router.post("/:id", (req, res, next) => {
 router.get("/delete/:id", (req, res, next) => {
   book.findByIdAndDelete(req.params.id, (err) => {
     if (err) return next(err);
-    res.redirect('/books');
+    res.redirect("/books");
   });
 });
 
